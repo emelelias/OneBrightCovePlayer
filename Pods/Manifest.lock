@@ -1,0 +1,25 @@
+PODS:
+  - Brightcove-Player-Core/dynamic (6.4.5)
+  - Brightcove-Player-IMA (6.4.5):
+    - Brightcove-Player-Core/dynamic (= 6.4.5)
+    - GoogleAds-IMA-iOS-SDK (= 3.9.0)
+  - GoogleAds-IMA-iOS-SDK (3.9.0)
+
+DEPENDENCIES:
+  - Brightcove-Player-IMA (~> 6.4.5)
+
+SPEC REPOS:
+  https://github.com/brightcove/BrightcoveSpecs.git:
+    - Brightcove-Player-Core
+    - Brightcove-Player-IMA
+  https://github.com/CocoaPods/Specs.git:
+    - GoogleAds-IMA-iOS-SDK
+
+SPEC CHECKSUMS:
+  Brightcove-Player-Core: bcd099cdc27a807ae23fcf22ecfb1eb52c72980c
+  Brightcove-Player-IMA: 347693d62eaae7c67da0be29bb769540e9da7a48
+  GoogleAds-IMA-iOS-SDK: 8f57879738137b81a48ba792e42439e6bff5413b
+
+PODFILE CHECKSUM: 3f980adebeec2b413756051f422f37a683b18c8c
+
+COCOAPODS: 1.8.1

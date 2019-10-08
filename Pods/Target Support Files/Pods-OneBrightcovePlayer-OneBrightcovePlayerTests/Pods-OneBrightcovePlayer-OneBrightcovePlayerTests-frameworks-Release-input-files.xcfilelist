@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-OneBrightcovePlayer-OneBrightcovePlayerTests/Pods-OneBrightcovePlayer-OneBrightcovePlayerTests-frameworks.sh
+${PODS_ROOT}/Brightcove-Player-Core/ios/dynamic/BrightcovePlayerSDK.framework
+${PODS_ROOT}/Brightcove-Player-IMA/ios/BrightcoveIMA.framework
+${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework
