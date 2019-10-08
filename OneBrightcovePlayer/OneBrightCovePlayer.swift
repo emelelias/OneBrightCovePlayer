@@ -36,7 +36,7 @@ public class OneBrightCovePlayer: NSObject, OnePlayer, BCOVPlaybackControllerDel
         let playbackService: BCOVPlaybackService? = {
                guard let playbackServiceRequestFactory = BCOVPlaybackServiceRequestFactory(
                    accountId: self.accountID,
-                   policyKey: self.accountID ) else {
+                   policyKey: self.policyKey ) else {
                        return nil
                }
                return BCOVPlaybackService(requestFactory: playbackServiceRequestFactory)
