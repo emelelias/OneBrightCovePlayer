@@ -20,9 +20,20 @@ public class OneBrightCovePlayer: NSObject, OnePlayer, BCOVPlaybackControllerDel
         self.policyKey = policyKey
         self.accountID = accountId
         super.init()
+        let proxy = BCOVFPSBrightcoveAuthProxy(publisherId: nil, applicationId: nil)
+        
+        let fairPlaySessionProvider: BCOVPlaybackSessionProvider = brightCoveManager.createFairPlaySessionProvider(
+            with: proxy!,
+            upstreamSessionProvider: nil)
+        
+        let sidercarSessionProvider: BCOVPlaybackSessionProvider = brightCoveManager.createSidecarSubtitlesSessionProvider(
+            withUpstreamSessionProvider:
+            fairPlaySessionProvider)
         self.bcovPlaybackController = brightCoveManager.createPlaybackController(
-            with: sessionProvidersWithoutAds(),
+            with: sidercarSessionProvider,
             viewStrategy: nil)
+        self.bcovPlaybackController?.isAutoAdvance = true
+        self.bcovPlaybackController?.isAutoPlay = true
 
     }
 
@@ -63,19 +74,7 @@ public class OneBrightCovePlayer: NSObject, OnePlayer, BCOVPlaybackControllerDel
         
     }
     
-    private func sessionProvidersWithoutAds() -> BCOVPlaybackSessionProvider {
-           let proxy = BCOVFPSBrightcoveAuthProxy(publisherId: nil, applicationId: nil)
-           
-           let fairPlaySessionProvider: BCOVPlaybackSessionProvider = brightCoveManager.createFairPlaySessionProvider(
-               with: proxy!,
-               upstreamSessionProvider: nil)
-           
-           let sidercarSessionProvider: BCOVPlaybackSessionProvider = brightCoveManager.createSidecarSubtitlesSessionProvider(
-               withUpstreamSessionProvider: fairPlaySessionProvider)
-           
-           return sidercarSessionProvider
-       }
-    
+   
 }
 
 extension OneBrightCovePlayer {
